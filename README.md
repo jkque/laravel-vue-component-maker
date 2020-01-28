@@ -85,7 +85,6 @@ return [
 Just run `php artisan make:vue-component ComponentName --path=path_inside_your_config_path(optional)` in your local project.
 And thats it!
 
-```php
 
 ### Testing
 
