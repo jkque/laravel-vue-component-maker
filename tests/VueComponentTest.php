@@ -2,9 +2,7 @@
 
 namespace Jkque\LaravelVueComponentMaker\Tests;
 
-use Jkque\LaravelVueComponentMaker\LaravelVueComponentMakerServiceProvider;
 use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Filesystem\Filesystem;
 
 class VueComponentTest extends TestCase
 {

@@ -5,7 +5,52 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/jkque/laravel-vue-component-maker.svg?style=flat-square)](https://scrutinizer-ci.com/g/jkque/laravel-vue-component-maker)
 [![Total Downloads](https://img.shields.io/packagist/dt/jkque/laravel-vue-component-maker.svg?style=flat-square)](https://packagist.org/packages/jkque/laravel-vue-component-maker)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package will create a vue component file for your laravel project.
+
+Here's the output of the vue component:
+
+``` js
+<template>
+    
+</template>
+
+<script>
+export default {
+    props: [],
+    components : {
+
+    },
+    created(){
+
+    },
+    mounted() {
+
+    },
+    data(){
+        return {
+            greetings: 'Hello World'
+        }
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
+    methods:{
+        click(){
+
+        }
+    }
+
+}
+</script>
+
+<style lang="scss">
+    
+</style>
+```
+
 
 ## Installation
 
@@ -15,11 +60,32 @@ You can install the package via composer:
 composer require jkque/laravel-vue-component-maker
 ```
 
+Next, you must publish the config file:
+
+```bash
+php artisan vendor:publish --provider="Jkque\LaravelVueComponentMaker\LaravelVueComponentMakerServiceProvider"
+```
+
+This is the content of the published config file `vue-component.php`.
+
+```php
+return [
+    /*
+    * You can place your custom package configuration in here.
+    * Path of your vue component
+    */
+    'path' => [
+        resource_path().'/assets/js/components',
+    ],
+];
+```
+
 ## Usage
 
-``` php
-// Usage description here
-```
+Just run `php artisan make:vue-component ComponentName --path=path_inside_your_config_path(optional)` in your local project.
+And thats it!
+
+```php
 
 ### Testing
 
