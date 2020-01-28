@@ -1,0 +1,39 @@
+<template>
+    
+</template>
+
+<script>
+export default {
+    props: [],
+    components : {
+
+    },
+    created(){
+
+    },
+    mounted() {
+
+    },
+    data(){
+        return {
+            greetings: 'Hello World'
+        }
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
+    methods:{
+        click(){
+
+        }
+    }
+
+}
+</script>
+
+<style lang="scss">
+    
+</style>

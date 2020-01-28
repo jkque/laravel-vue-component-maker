@@ -1,0 +1,57 @@
+{
+    "name": "jkque/laravel-vue-component-maker",
+    "description": "Create vue component for laravel",
+    "keywords": [
+        "jkque",
+        "Laravel",
+        "vue-component-maker",
+        "component",
+        "vue"
+    ],
+    "homepage": "https://github.com/jkque/laravel-vue-component-maker",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "John Kevin Cadungog",
+            "email": "johnkevin.cadungog@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.0|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jkque\\LaravelVueComponentMaker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jkque\\LaravelVueComponentMaker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jkque\\LaravelVueComponentMaker\\LaravelVueComponentMakerServiceProvider"
+            ],
+            "aliases": {
+                "LaravelVueComponentMaker": "Jkque\\LaravelVueComponentMaker\\LaravelVueComponentMakerFacade"
+            }
+        }
+    }
+}
