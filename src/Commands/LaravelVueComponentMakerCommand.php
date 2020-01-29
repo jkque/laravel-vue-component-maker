@@ -75,7 +75,7 @@ class LaravelVueComponentMakerCommand extends Command
 
         $stub = $this->populateStub();
         $this->files->put($this->getPath($name, $path), $stub);
-        $this->line("<info>Created Vue Component:</info> {$name}");
+        $this->line("<info>Created Vue Component:</info> {$name}.vue");
     }
 
     /**
@@ -101,11 +101,10 @@ class LaravelVueComponentMakerCommand extends Command
     protected function ensureComponentDoesntAlreadyExist($name, $path)
     {
         if (file_exists($path.'/'.$name.'.vue')) {
-            throw new InvalidArgumentException("A {$name} component already exists.");
+            throw new InvalidArgumentException("A {$name}.vue component already exists.");
         }
-
-        if (!$this->files->isDirectory($dir = dirname($path))) {
-            $this->files->makeDirectory($dir, 0777, true, true);
+        if (!file_exists($path)) {
+            $this->files->makeDirectory($path, 0777, true, true);
         }
         
     }
